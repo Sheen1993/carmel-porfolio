@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-script: "Great Vibes", cursive;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+
+  /* Palette drawn from the portfolio cover: forest ink, sage, dusty blue, cream & taupe */
+  --color-forest-900: #173328;
+  --color-forest-800: #1f4536;
+  --color-forest-700: #2a5a46;
+  --color-forest-600: #3b6e58;
+
+  --color-sage-50: #f1f4ef;
+  --color-sage-100: #e2e9df;
+  --color-sage-200: #c9d6c4;
+  --color-sage-300: #aebfa9;
+  --color-sage-400: #95aa90;
+  --color-sage-500: #7a9175;
+
+  --color-mist-50: #f1f6f9;
+  --color-mist-100: #e2edf3;
+  --color-mist-200: #c8dbe6;
+  --color-mist-300: #a9c5d5;
+
+  --color-cream-50: #fbf9f5;
+  --color-cream-100: #f7f3ec;
+  --color-cream-200: #efe7db;
+  --color-cream-300: #e4d8c6;
+
+  --color-taupe-300: #cbbba6;
+  --color-taupe-400: #b3a089;
+  --color-taupe-500: #9c876e;
+  --color-taupe-600: #7f6b54;
+
+  --color-ink: #26332e;
+  --color-muted: #5f6b66;
+
+  --shadow-soft: 0 10px 30px -12px rgb(31 69 54 / 0.18);
+  --shadow-lift: 0 24px 48px -18px rgb(31 69 54 / 0.28);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-cream-100 font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-sage-200 text-forest-900;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-forest-600;
+  }
+}
+
+@utility eyebrow {
+  @apply font-sans text-xs font-medium tracking-[0.32em] uppercase text-taupe-500;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-[0.12em] uppercase transition-all duration-300;
+}
+
+@utility btn-primary {
+  @apply btn bg-forest-800 text-cream-50 shadow-soft hover:-translate-y-0.5 hover:bg-forest-700 hover:shadow-lift;
+}
+
+@utility btn-ghost {
+  @apply btn border border-forest-800/25 bg-white/60 text-forest-800 backdrop-blur hover:-translate-y-0.5 hover:border-forest-800/50 hover:bg-white;
+}
+
+@utility card {
+  @apply rounded-3xl border border-white/70 bg-white/70 shadow-soft backdrop-blur-sm;
+}
+
+/* Organic blob used for decorative background shapes */
+.blob {
+  border-radius: 58% 42% 55% 45% / 52% 48% 52% 48%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
