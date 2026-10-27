@@ -41,7 +41,6 @@ export default function Navbar() {
       <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 sm:px-8" aria-label="Primary">
         <a href="#top" className="group flex items-baseline gap-2" onClick={() => setOpen(false)}>
           <span className="font-script text-4xl leading-none text-forest-800 transition-colors group-hover:text-forest-600">Carmel</span>
-          <span className="hidden text-[0.65rem] font-medium tracking-[0.3em] text-taupe-500 uppercase sm:inline">B. Coscos</span>
         </a>
 
         <ul className="hidden items-center gap-1 lg:flex">
